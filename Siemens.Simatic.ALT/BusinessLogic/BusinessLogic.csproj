@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{072A6B6E-0890-43B9-8C51-33EAAEA59E10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Siemens.Simatic.ALT.BusinessLogic</RootNamespace>
+    <AssemblyName>Siemens.Simatic.ALT.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Weblib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Configuration, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Right.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Right.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Right.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Right.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.BusinessLogic">
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.Common">
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.DataAccess">
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.Enterprise">
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.Enterprise.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultImpl\ALT_BSC_BO.cs" />
+    <Compile Include="DefaultImpl\API\API_WECHAT_BO.cs" />
+    <Compile Include="DefaultImpl\API\Http_Request.cs" />
+    <Compile Include="DefaultImpl\CV_PM_ALT_NOTIBO.cs" />
+    <Compile Include="DefaultImpl\CV_PM_EMAIL_NOTIBOcs.cs" />
+    <Compile Include="DefaultImpl\CV_PM_WECHAT_AGENTBO.cs" />
+    <Compile Include="DefaultImpl\CV_PM_WECHAT_DEPARTMENTBO .cs" />
+    <Compile Include="DefaultImpl\CV_PM_WECHAT_NOTIBO.cs" />
+    <Compile Include="DefaultImpl\CV_PM_WECHAT_USERBO.cs" />
+    <Compile Include="DefaultImpl\CV_PM_WECHAT_USER_DEPARTMENTBO.cs" />
+    <Compile Include="DefaultImpl\MailHelper.cs" />
+    <Compile Include="DefaultImpl\PM_ALT_BASEBO.cs" />
+    <Compile Include="DefaultImpl\PM_ALT_NOTIBO.cs" />
+    <Compile Include="DefaultImpl\PM_ALT_MESSAGEBO.cs" />
+    <Compile Include="DefaultImpl\PM_ALT_NOTI_GROUPBO.cs" />
+    <Compile Include="DefaultImpl\PM_ALT_NOTI_GROUP_DETAILBO.cs" />
+    <Compile Include="DefaultImpl\CV_PM_ALT_BASEBO.cs" />
+    <Compile Include="DefaultImpl\ALT_BSC_BO2.cs" />
+    <Compile Include="DefaultImpl\ModelHandler.cs" />
+    <Compile Include="Enums\MesMailEnum.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_ALT_BASEBO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBO\ICV_PM_ALT_NOTIBO.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_EMAIL_NOTIBO.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_WECHAT_AGENTBO.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_WECHAT_DEPARTMENTBO.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_WECHAT_NOTIBO.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_WECHAT_USERBO.cs" />
+    <Compile Include="InterfaceBO\ICV_PM_WECHAT_USER_DEPARTMENTBO.cs" />
+    <Compile Include="InterfaceBO\IPM_ALT_BASEBO.cs" />
+    <Compile Include="InterfaceBO\IPM_ALT_NOTIBO.cs" />
+    <Compile Include="InterfaceBO\IPM_ALT_MESSAGEBO.cs" />
+    <Compile Include="InterfaceBO\IPM_ALT_NOTI_GROUPBO.cs" />
+    <Compile Include="InterfaceBO\IPM_ALT_NOTI_GROUP_DETAILBO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Siemens.Simatic.Util\Utilities\Utilities.csproj">
+      <Project>{4d4ebb62-46a9-403d-82f8-e21fffd91f30}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6bdb2785-c86a-4d26-808a-7a7ae8762e34}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{0c3ac49a-e587-4bb7-8aeb-3708dd9a8fd7}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Impl\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

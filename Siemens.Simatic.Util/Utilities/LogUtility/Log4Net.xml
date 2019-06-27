@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <!--
+    Off. 
+    Fatal. 
+    Error. 
+    Warn. 
+    Info. 
+    Debug. 
+    All. 
+  -->
+  <root>
+    <level value="All" />
+    <appender-ref ref="ADONetAppender" />
+  </root>
+  <appender name="ADONetAppender" type="log4net.Appender.ADONetAppender">
+    <bufferSize value="1"/>
+    <connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+    <connectionString value="User ID=sa;Initial Catalog=SITMesDB;Data Source=.;Password=siemens;Max Pool Size=200"/>
+    <commandText value="INSERT INTO CO_HH_LOG ([LogID],[Date],[Thread],[Level],[Message],[Exception],[ModuleName],[ClassName],[MethodName],[UserID],[CustomMessage]) VALUES (@LogID, @log_date, @thread, @log_level , @message, @exception,@moduleName,@ClassName,@MethodName ,@UserID,@CustomMessage)" />
+    <parameter>
+      <parameterName value="@LogID"/>
+      <dbType value="String"/>
+      <size value="50"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%X{LogID}"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@log_date"/>
+      <dbType value="DateTime"/>
+      <layout type="log4net.Layout.RawTimeStampLayout"/>
+    </parameter>
+    <parameter>
+      <parameterName value="@thread"/>
+      <dbType value="String"/>
+      <size value="255"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%thread"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@log_level"/>
+      <dbType value="String"/>
+      <size value="50"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%level"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@message"/>
+      <dbType value="String"/>
+      <size value="4000"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%message"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@exception"/>
+      <dbType value="String"/>
+      <size value="2000"/>
+      <layout type="log4net.Layout.ExceptionLayout"/>
+    </parameter>
+    <parameter>
+      <parameterName value="@moduleName"/>
+      <dbType value="String"/>
+      <size value="50"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%X{ModuleName}"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@ClassName"/>
+      <dbType value="String"/>
+      <size value="500"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%X{ClassName}"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@MethodName"/>
+      <dbType value="String"/>
+      <size value="50"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%X{MethodName}"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@UserID"/>
+      <dbType value="String"/>
+      <size value="50"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%X{UserID}"/>
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@CustomMessage"/>
+      <dbType value="String"/>
+      <size value="4000"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%message"/>
+      </layout>
+    </parameter>
+  </appender>
+</log4net>

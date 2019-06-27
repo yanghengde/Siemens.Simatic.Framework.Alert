@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24C2BDED-BB5B-4CFD-A340-814BE6A7FE91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Siemens.Simatic.Service.NotifyService</RootNamespace>
+    <AssemblyName>Siemens.Simatic.Service.NotifyService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Siemens.Simatic.Notify.Service\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Weblib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Configuration, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.Enterprise, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.Enterprise.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4489.42329, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IService.cs" />
+    <Compile Include="MailHelper.cs" />
+    <Compile Include="NotifyInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotifyInstaller.Designer.cs">
+      <DependentUpon>NotifyInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotifyService.Designer.cs">
+      <DependentUpon>NotifyService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NotifyInstaller.resx">
+      <DependentUpon>NotifyInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyService.resx">
+      <DependentUpon>NotifyService.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Siemens.Simatic.ALT\BusinessLogic\BusinessLogic.csproj">
+      <Project>{072a6b6e-0890-43b9-8c51-33eaaea59e10}</Project>
+      <Name>BusinessLogic %28Siemens.Simatic.ALT\BusinessLogic%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Siemens.Simatic.ALT\Common\Common.csproj">
+      <Project>{6bdb2785-c86a-4d26-808a-7a7ae8762e34}</Project>
+      <Name>Common %28Siemens.Simatic.ALT\Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Siemens.Simatic.PM\BusinessLogic\BusinessLogic.csproj">
+      <Project>{cb960979-68a4-4f18-8ecd-fe10f4ecea21}</Project>
+      <Name>BusinessLogic %28Siemens.Simatic.PM\BusinessLogic%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Siemens.Simatic.PM\Common\Common.csproj">
+      <Project>{fc7a95da-94ec-4576-8f70-97fb29ebac3b}</Project>
+      <Name>Common %28Siemens.Simatic.PM\Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Siemens.Simatic.Util\Log4j\log4net.vs2008.csproj">
+      <Project>{181fe707-e161-4722-9f38-6aaab6faa106}</Project>
+      <Name>log4net.vs2008</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

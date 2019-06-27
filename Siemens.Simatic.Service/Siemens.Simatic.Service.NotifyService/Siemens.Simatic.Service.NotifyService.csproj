@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24C2BDED-BB5B-4CFD-A340-814BE6A7FE91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Siemens.Simatic.Notify.Service</RootNamespace>
+    <AssemblyName>Siemens.Simatic.Service.NotifyService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Siemens.Simatic.Notify.Service\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Basic.BusinessLogic">
+      <HintPath>..\..\Lib\Siemens.Simatic.Basic.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Basic.Common">
+      <HintPath>..\..\Lib\Siemens.Simatic.Basic.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Basic.DataAccess">
+      <HintPath>..\..\Lib\Siemens.Simatic.Basic.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Common">
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Configuration">
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Core">
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Data">
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Wechat.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Wechat.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\..\Lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NotifyService.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="NotifyHelper.cs" />
+    <Compile Include="MainService.cs" />
+    <Compile Include="NotifyInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotifyInstaller.Designer.cs">
+      <DependentUpon>NotifyInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MesLog.cs" />
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NotifyInstaller.resx">
+      <DependentUpon>NotifyInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Siemens.Simatic.ALT\BusinessLogic\BusinessLogic.csproj">
+      <Project>{072a6b6e-0890-43b9-8c51-33eaaea59e10}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Siemens.Simatic.ALT\Common\Common.csproj">
+      <Project>{6bdb2785-c86a-4d26-808a-7a7ae8762e34}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Siemens.Simatic.Util\Utilities\Utilities.csproj">
+      <Project>{4d4ebb62-46a9-403d-82f8-e21fffd91f30}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

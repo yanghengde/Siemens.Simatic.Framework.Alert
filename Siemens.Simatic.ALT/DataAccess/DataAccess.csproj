@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C3AC49A-E587-4BB7-8AEB-3708DD9A8FD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Siemens.Simatic.ALT.DataAccess</RootNamespace>
+    <AssemblyName>Siemens.Simatic.ALT.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Siemens.Simatic.Platform.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Platform.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Siemens.Simatic.Platform.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ALT_BSC_DAO.cs" />
+    <Compile Include="CV_PM_ALT_NOTIDAO.cs" />
+    <Compile Include="CV_PM_EMAIL_NOTIDAO.cs" />
+    <Compile Include="CV_PM_WECHAT_AGENTDAO.cs" />
+    <Compile Include="CV_PM_WECHAT_DEPARTMENTDAO.cs" />
+    <Compile Include="CV_PM_WECHAT_NOTIDAO.cs" />
+    <Compile Include="CV_PM_WECHAT_USERDAO.cs" />
+    <Compile Include="CV_PM_WECHAT_USER_DEPARTMENTDAO.cs" />
+    <Compile Include="PM_ALT_BASEDAO.cs" />
+    <Compile Include="PM_ALT_BASEDAO2.cs" />
+    <Compile Include="PM_ALT_LOGDAO.cs" />
+    <Compile Include="PM_ALT_LOGDAO2.cs" />
+    <Compile Include="PM_ALT_NOTIDAO.cs" />
+    <Compile Include="PM_ALT_NOTIDAO2.cs" />
+    <Compile Include="PM_ALT_MESSAGEDAO.cs" />
+    <Compile Include="PM_ALT_NOTI_GROUPDAO.cs" />
+    <Compile Include="PM_ALT_NOTI_GROUP_DETAILDAO.cs" />
+    <Compile Include="PM_ALT_NOTI_GROUP_DETAILDAO2.cs" />
+    <Compile Include="CV_PM_ALT_BASEDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DbHelperSQL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Siemens.Simatic.Util\Utilities\Utilities.csproj">
+      <Project>{4d4ebb62-46a9-403d-82f8-e21fffd91f30}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6bdb2785-c86a-4d26-808a-7a7ae8762e34}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
